@@ -75,48 +75,43 @@ textarea {
   display: inline-flex;
   overflow: hidden;
   flex-shrink: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 245, 234, 0.96));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(255, 248, 241, 0.86));
 }
 
 .brand-logo-frame-header {
   width: 68px;
-  height: 58px;
-  align-items: flex-start;
+  height: 68px;
+  align-items: center;
   justify-content: center;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(198, 131, 72, 0.15);
+  box-shadow: 0 10px 26px rgba(198, 131, 72, 0.12);
 }
 
 .brand-logo-frame-hero {
   width: 180px;
   height: 180px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 247, 238, 0.2);
 }
 
 .brand-logo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transform: scale(1.22);
-  transform-origin: top center;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0 62%, transparent 62%);
-  mask-image: linear-gradient(to bottom, #000 0 62%, transparent 62%);
+  object-fit: contain;
+  object-position: center;
+  transform: none;
 }
 
 .brand-logo-frame-header .brand-logo {
-  width: 150%;
-  height: 150%;
-  transform: translateY(-18px) scale(1.18);
+  width: 92%;
+  height: 92%;
 }
 
 .brand-logo-frame-hero .brand-logo {
-  width: 150%;
-  height: 150%;
-  transform: translateY(-28px) scale(1.22);
+  width: 90%;
+  height: 90%;
 }
 
 .topnav {
@@ -284,7 +279,7 @@ textarea {
 }
 
 .hero-logo {
-  object-position: center top;
+  object-position: center;
 }
 
 .brand-caption {
