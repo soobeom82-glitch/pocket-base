@@ -511,8 +511,7 @@ textarea {
   }
 
   .section-nav {
-    top: 122px;
-    margin-top: 4px;
+    display: none;
   }
 
   .hero-copy,
