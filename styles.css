@@ -497,6 +497,18 @@ textarea {
   background: rgba(255, 255, 255, 0.92);
 }
 
+.site-footer {
+  margin-top: 28px;
+  padding: 22px 6px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 6px 0;
+}
+
 @media (max-width: 1080px) {
   .hero,
   .branch-feature,
