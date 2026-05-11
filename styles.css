@@ -198,11 +198,13 @@ textarea {
   margin: 0;
   line-height: 1.05;
   letter-spacing: -0.03em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .hero h1 {
-  max-width: 11ch;
-  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  max-width: 13ch;
+  font-size: clamp(2.35rem, 4.6vw, 4.35rem);
 }
 
 .hero-text,
@@ -215,6 +217,8 @@ textarea {
 .price-copy {
   color: var(--muted);
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .hero-text {
@@ -392,6 +396,8 @@ textarea {
 .branch-feature h3 {
   margin: 0 0 12px;
   font-size: 1.25rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .branch-feature {
@@ -422,6 +428,13 @@ textarea {
 
 .detail-label {
   color: var(--accent-strong);
+}
+
+.branch-details p,
+.faq-list summary,
+.site-footer p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .compact-grid {
@@ -497,6 +510,14 @@ textarea {
   background: rgba(255, 255, 255, 0.92);
 }
 
+.form-note {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
 .site-footer {
   margin-top: 28px;
   padding: 22px 6px 0;
@@ -570,6 +591,8 @@ textarea {
 
   .hero h1 {
     max-width: none;
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.12;
   }
 
   .hero-metrics,
