@@ -56,7 +56,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 28px;
   padding: 18px 0 10px;
   backdrop-filter: blur(16px);
 }
@@ -259,6 +259,29 @@ textarea {
 .button-ghost {
   border-color: var(--line);
   background: rgba(255, 255, 255, 0.54);
+}
+
+.floating-cta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--text);
+  color: #fff;
+  box-shadow: 0 18px 34px rgba(45, 36, 31, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-cta:hover,
+.floating-cta:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 38px rgba(45, 36, 31, 0.22);
 }
 
 .hero-metrics {
@@ -549,5 +572,12 @@ textarea {
 
   .button {
     width: 100%;
+  }
+
+  .floating-cta {
+    right: 16px;
+    bottom: 16px;
+    min-height: 50px;
+    padding: 0 18px;
   }
 }
