@@ -1,20 +1,3 @@
-const filterButtons = document.querySelectorAll(".filter-button");
-const branchCards = document.querySelectorAll(".branch-card");
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const { filter } = button.dataset;
-
-    filterButtons.forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-
-    branchCards.forEach((card) => {
-      const matches = filter === "all" || card.dataset.region === filter;
-      card.classList.toggle("is-hidden", !matches);
-    });
-  });
-});
-
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {

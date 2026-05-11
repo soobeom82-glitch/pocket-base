@@ -1,16 +1,13 @@
 :root {
   --bg: #fbf6f1;
-  --bg-strong: #f6ede4;
-  --surface: rgba(255, 255, 255, 0.8);
-  --surface-strong: #ffffff;
   --text: #2d241f;
   --muted: #6f6258;
   --line: rgba(45, 36, 31, 0.12);
   --accent: #f28a23;
   --accent-strong: #cf6b11;
   --accent-soft: #fff0df;
-  --accent-faint: #fff8f1;
-  --shadow: 0 24px 50px rgba(102, 72, 40, 0.1);
+  --surface: rgba(255, 255, 255, 0.78);
+  --shadow: 0 22px 44px rgba(102, 72, 40, 0.1);
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -42,26 +39,25 @@ a {
 
 button,
 input,
-select,
 textarea {
   font: inherit;
 }
 
 .page-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
-  padding-bottom: 80px;
+  padding-bottom: 72px;
 }
 
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px 0 12px;
+  padding: 18px 0 10px;
   backdrop-filter: blur(16px);
 }
 
@@ -71,7 +67,6 @@ textarea {
   column-gap: 12px;
   row-gap: 2px;
   align-items: center;
-  color: var(--text);
 }
 
 .brand-logo-frame {
@@ -79,13 +74,12 @@ textarea {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 .brand-logo-frame-header {
   grid-row: 1 / span 2;
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 247, 238, 0.95));
   box-shadow: 0 10px 24px rgba(198, 131, 72, 0.14);
@@ -99,7 +93,7 @@ textarea {
 
 .brand-name {
   font-family: "Space Grotesk", "IBM Plex Sans KR", sans-serif;
-  font-size: 1.32rem;
+  font-size: 1.28rem;
   font-weight: 700;
   line-height: 1;
 }
@@ -109,11 +103,20 @@ textarea {
   font-size: 0.9rem;
 }
 
-.topnav {
+.topnav,
+.section-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 12px;
+}
+
+.topnav {
   color: var(--muted);
+}
+
+.topnav a,
+.section-nav a {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .topnav a:hover,
@@ -121,36 +124,64 @@ textarea {
   color: var(--text);
 }
 
+.section-nav {
+  position: sticky;
+  top: 88px;
+  z-index: 15;
+  width: fit-content;
+  margin: 8px auto 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 252, 248, 0.9);
+  box-shadow: 0 14px 28px rgba(102, 72, 40, 0.08);
+}
+
+.section-nav a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
 .section {
-  padding: 44px 0;
+  padding: 34px 0;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
-  gap: 28px;
-  padding-top: 52px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.8fr);
+  gap: 24px;
+  padding-top: 40px;
 }
 
 .hero-copy,
-.hero-panel,
-.intro-card,
-.benefit-card,
-.branch-card,
-.plan-card,
-.contact-card,
-.compare-table-wrap,
-.audience-grid article,
-.process-grid article,
-.faq-list details {
+.panel-card,
+.service-card,
+.branch-feature,
+.compact-card,
+.faq-list details,
+.contact-card {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
 
-.hero-copy {
-  padding: 42px;
+.hero-copy,
+.panel-card,
+.branch-feature,
+.compact-card,
+.contact-card {
   border-radius: var(--radius-xl);
-  background: linear-gradient(145deg, rgba(255, 249, 241, 0.9), rgba(255, 255, 255, 0.65));
+  background: linear-gradient(145deg, rgba(255, 249, 241, 0.9), rgba(255, 255, 255, 0.68));
+}
+
+.hero-copy {
+  padding: 40px;
 }
 
 .eyebrow {
@@ -170,25 +201,24 @@ textarea {
 }
 
 .hero h1 {
-  max-width: 12ch;
-  font-size: clamp(2.6rem, 5vw, 5rem);
+  max-width: 11ch;
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
 }
 
 .hero-text,
-.intro-card p,
-.benefit-card p,
+.service-card p,
 .branch-copy,
-.plan-card li,
-.contact-card p,
+.branch-details p,
+.brand-caption,
 .faq-list p,
-.process-grid p,
-.audience-grid p {
+.contact-card p,
+.price-copy {
   color: var(--muted);
   line-height: 1.7;
 }
 
 .hero-text {
-  max-width: 64ch;
+  max-width: 60ch;
   margin: 22px 0 0;
   font-size: 1.02rem;
 }
@@ -208,7 +238,7 @@ textarea {
   padding: 0 20px;
   border-radius: 999px;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .button:hover,
@@ -228,7 +258,7 @@ textarea {
 
 .button-ghost {
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.54);
 }
 
 .hero-metrics {
@@ -236,19 +266,19 @@ textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   padding: 0;
-  margin: 34px 0 0;
+  margin: 30px 0 0;
   list-style: none;
 }
 
 .hero-metrics li {
   padding: 18px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .hero-metrics strong {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
 }
 
 .hero-metrics span {
@@ -259,13 +289,10 @@ textarea {
 .hero-panel {
   display: grid;
   gap: 18px;
-  align-content: start;
 }
 
 .panel-card {
   padding: 28px;
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.7);
 }
 
 .panel-card-primary {
@@ -273,50 +300,28 @@ textarea {
   color: #fffdf9;
 }
 
-.brand-logo-frame-hero {
-  width: 148px;
-  height: 148px;
-  margin-bottom: 16px;
-  border-radius: 28px;
-  background: rgba(255, 247, 238, 0.2);
-}
-
-.brand-logo-hero {
-  width: 86%;
-  height: 86%;
-}
-
-.panel-list {
+.panel-list,
+.step-list {
   display: grid;
   gap: 10px;
-  padding-left: 18px;
+  padding-left: 20px;
   margin: 0 0 14px;
 }
 
 .brand-caption {
   margin: 0;
-  line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .panel-label,
-.intro-kicker,
-.plan-name,
-.branch-region {
+.branch-region,
+.detail-label,
+.price-label {
   margin: 0 0 12px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.panel-card ul,
-.branch-card ul,
-.plan-card ul {
-  display: grid;
-  gap: 10px;
-  padding-left: 18px;
-  margin: 0;
 }
 
 .tag-grid {
@@ -332,170 +337,88 @@ textarea {
   color: var(--accent-strong);
 }
 
-.intro-card {
-  padding: 24px 28px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.58);
-}
-
 .section-heading {
   display: grid;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .section-heading h2,
 .contact-card h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
 }
 
-.section-heading-split {
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 18px;
-}
-
-.benefit-grid,
-.audience-grid,
-.branch-grid,
-.plan-grid,
-.process-grid {
+.service-grid,
+.compact-grid {
   display: grid;
   gap: 18px;
 }
 
-.benefit-grid,
-.audience-grid,
-.plan-grid {
+.service-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.branch-grid,
-.process-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.benefit-card,
-.audience-grid article,
-.branch-card,
-.plan-card,
-.process-grid article {
+.service-card,
+.compact-card {
   padding: 26px;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.7);
 }
 
-.benefit-card h3,
-.audience-grid h3,
-.branch-card h3,
-.plan-card h3,
-.process-grid h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
+.service-card h3,
+.branch-feature h3 {
+  margin: 0 0 12px;
   font-size: 1.25rem;
 }
 
-.filter-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.branch-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 22px;
+  padding: 30px;
 }
 
-.filter-button {
-  padding: 12px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-.filter-button.is-active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-
-.branch-card {
+.branch-main {
   position: relative;
-  overflow: hidden;
 }
 
-.branch-card::after {
+.branch-main::after {
   content: "";
   position: absolute;
-  inset: auto -35px -35px auto;
+  inset: auto -10px -20px auto;
   width: 120px;
   height: 120px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(242, 138, 35, 0.14), transparent 70%);
 }
 
-.branch-card::before {
-  content: "";
-  position: absolute;
-  inset: -22px auto auto -22px;
-  width: 86px;
-  height: 86px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 194, 132, 0.22), transparent 72%);
-}
-
-.branch-card a {
-  display: inline-flex;
-  margin-top: 18px;
-  color: var(--accent-strong);
-  font-weight: 600;
-}
-
-.compare-table-wrap {
-  overflow-x: auto;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.compare-table {
-  width: 100%;
-  min-width: 680px;
-  border-collapse: collapse;
-}
-
-.compare-table th,
-.compare-table td {
-  padding: 18px 16px;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-}
-
-.compare-table thead th {
-  background: rgba(30, 26, 24, 0.04);
-}
-
-.plan-card {
+.branch-details {
   display: grid;
-  gap: 8px;
+  gap: 16px;
 }
 
-.plan-card-featured {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 240, 223, 0.88));
-}
-
-.plan-price {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.process-grid article span {
-  display: inline-flex;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  border-radius: 14px;
-  background: var(--accent-soft);
+.detail-label {
   color: var(--accent-strong);
-  font-family: "Space Grotesk", "IBM Plex Sans KR", sans-serif;
+}
+
+.compact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.step-list {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.price-box {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 240, 223, 0.72);
+}
+
+.price-value {
+  margin: 0 0 8px;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -526,11 +449,9 @@ textarea {
 
 .contact-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
   gap: 28px;
   padding: 34px;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(160deg, rgba(255, 249, 241, 0.94), rgba(255, 255, 255, 0.78));
 }
 
 .contact-form {
@@ -545,7 +466,6 @@ textarea {
 }
 
 .contact-form input,
-.contact-form select,
 .contact-form textarea {
   width: 100%;
   padding: 14px 16px;
@@ -554,38 +474,28 @@ textarea {
   background: rgba(255, 255, 255, 0.92);
 }
 
-.branch-card.is-hidden {
-  display: none;
-}
-
 @media (max-width: 1080px) {
   .hero,
-  .contact-card,
-  .section-heading-split {
+  .branch-feature,
+  .compact-grid,
+  .contact-card {
     grid-template-columns: 1fr;
   }
 
-  .benefit-grid,
-  .audience-grid,
-  .plan-grid,
-  .branch-grid,
-  .process-grid {
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-nav {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 }
 
 @media (max-width: 760px) {
   .page-shell {
     width: min(100% - 20px, 1000px);
-  }
-
-  .brand {
-    grid-template-columns: auto 1fr;
-  }
-
-  .brand-logo-frame-header {
-    width: 54px;
-    height: 54px;
   }
 
   .topbar {
@@ -597,18 +507,31 @@ textarea {
     order: 3;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .section-nav {
+    top: 122px;
+    margin-top: 4px;
   }
 
   .hero-copy,
   .panel-card,
-  .benefit-card,
-  .audience-grid article,
-  .branch-card,
-  .plan-card,
-  .process-grid article,
+  .service-card,
+  .branch-feature,
+  .compact-card,
   .contact-card,
   .faq-list details {
     padding: 22px;
+  }
+
+  .brand {
+    grid-template-columns: auto 1fr;
+  }
+
+  .brand-logo-frame-header {
+    width: 54px;
+    height: 54px;
   }
 
   .hero h1 {
@@ -616,21 +539,16 @@ textarea {
   }
 
   .hero-metrics,
-  .benefit-grid,
-  .audience-grid,
-  .plan-grid,
-  .branch-grid,
-  .process-grid {
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
-  .button,
-  .filter-button {
-    width: 100%;
+  .hero-actions,
+  .topnav {
+    gap: 10px;
   }
 
-  .hero-actions,
-  .filter-group {
-    flex-direction: column;
+  .button {
+    width: 100%;
   }
 }
