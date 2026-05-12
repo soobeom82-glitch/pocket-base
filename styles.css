@@ -227,6 +227,28 @@ textarea {
   font-size: 1.02rem;
 }
 
+.promo-banner {
+  display: grid;
+  gap: 6px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid rgba(242, 138, 35, 0.22);
+  border-radius: var(--radius-md);
+  background: rgba(255, 240, 223, 0.66);
+}
+
+.promo-banner strong {
+  color: var(--accent-strong);
+  font-size: 0.94rem;
+}
+
+.promo-banner span,
+.price-promo {
+  color: var(--text);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -431,6 +453,11 @@ textarea {
   margin: 0 0 8px;
   font-size: 2rem;
   font-weight: 700;
+}
+
+.price-promo {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
 }
 
 .faq-list {
