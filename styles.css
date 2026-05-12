@@ -408,6 +408,19 @@ textarea {
   position: relative;
 }
 
+.branch-image {
+  margin: 24px 0 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 34px rgba(102, 72, 40, 0.14);
+}
+
+.branch-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .branch-main::after {
   content: "";
   position: absolute;
