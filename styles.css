@@ -332,6 +332,14 @@ textarea {
   margin: 0 0 14px;
 }
 
+.panel-note {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
 .brand-caption {
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
