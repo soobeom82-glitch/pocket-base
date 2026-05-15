@@ -569,6 +569,23 @@ textarea {
   word-break: keep-all;
 }
 
+.form-status {
+  min-height: 1.5em;
+  margin: -2px 0 0;
+  color: var(--accent-strong);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.form-status.is-error {
+  color: #b65a18;
+}
+
+.contact-form .button[disabled] {
+  opacity: 0.72;
+  cursor: wait;
+}
+
 .form-note {
   margin: 4px 0 0;
   color: var(--muted);
