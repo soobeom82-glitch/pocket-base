@@ -531,6 +531,14 @@ textarea {
 .contact-form {
   display: grid;
   gap: 14px;
+  align-content: start;
+}
+
+.contact-form-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  word-break: keep-all;
 }
 
 .contact-form label {
@@ -557,6 +565,15 @@ textarea {
   border-color: rgba(242, 138, 35, 0.45);
 }
 
+.contact-points {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .contact-info {
   margin-top: 18px;
   padding-top: 18px;
@@ -567,23 +584,6 @@ textarea {
 .contact-info p {
   margin: 6px 0;
   word-break: keep-all;
-}
-
-.form-status {
-  min-height: 1.5em;
-  margin: -2px 0 0;
-  color: var(--accent-strong);
-  font-size: 0.94rem;
-  line-height: 1.5;
-}
-
-.form-status.is-error {
-  color: #b65a18;
-}
-
-.contact-form .button[disabled] {
-  opacity: 0.72;
-  cursor: wait;
 }
 
 .form-note {

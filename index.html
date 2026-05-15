@@ -59,7 +59,13 @@
             </div>
             <div class="hero-actions">
               <a class="button button-primary" href="#branch">지점 확인하기</a>
-              <a class="button button-secondary" href="#contact">빠른 상담받기</a>
+              <a
+                class="button button-secondary"
+                href="https://forms.gle/MsRSPNTdGCXXruYV8"
+                target="_blank"
+                rel="noreferrer"
+                >빠른 상담받기</a
+              >
             </div>
           </div>
 
@@ -226,40 +232,25 @@
                 <p>이메일 : 0x00@kakao.com</p>
               </div>
             </div>
-            <form
-              class="contact-form"
-              action="https://formsubmit.co/0x00@kakao.com"
-              method="POST"
-              accept-charset="UTF-8"
-            >
-              <input type="hidden" name="_subject" value="Pocket Base 상담 신청" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <label>
-                이름
-                <input type="text" name="name" placeholder="홍길동" required />
-              </label>
-              <label>
-                연락처
-                <input type="tel" name="phone" placeholder="010-0000-0000" required />
-              </label>
-              <label>
-                이메일
-                <input type="email" name="email" placeholder="name@example.com" required />
-              </label>
-              <label>
-                문의 내용
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="업종, 희망 이용 시기, 필요한 서비스 등을 적어주세요."
-                  required
-                ></textarea>
-              </label>
-              <button class="button button-primary" type="submit">상담 신청 보내기</button>
-              <p class="form-status" aria-live="polite"></p>
-              <p class="form-note">제출한 내용은 FormSubmit을 통해 `0x00@kakao.com`으로 바로 전달됩니다. 외부 전송 서비스 상태에 따라 일시적으로 지연될 수 있습니다.</p>
-            </form>
+            <div class="contact-form">
+              <p class="contact-form-title">상담 신청은 구글 폼으로 받고 있습니다</p>
+              <p class="form-note">
+                아래 버튼을 누르면 새 창에서 상담 신청 폼이 열립니다. 기본 정보와 문의 내용을
+                남겨주시면 확인 후 빠르게 연락드리겠습니다.
+              </p>
+              <ul class="contact-points">
+                <li>이름과 연락처</li>
+                <li>업종과 희망 이용 시기</li>
+                <li>필요한 서비스 또는 문의 내용</li>
+              </ul>
+              <a
+                class="button button-primary"
+                href="https://forms.gle/MsRSPNTdGCXXruYV8"
+                target="_blank"
+                rel="noreferrer"
+                >구글 폼으로 상담 신청</a
+              >
+            </div>
           </div>
         </section>
       </main>
@@ -272,7 +263,13 @@
       </footer>
     </div>
 
-    <a class="floating-cta" href="#contact">상담 신청</a>
+    <a
+      class="floating-cta"
+      href="https://forms.gle/MsRSPNTdGCXXruYV8"
+      target="_blank"
+      rel="noreferrer"
+      >상담 신청</a
+    >
 
     <script src="./script.js"></script>
   </body>
