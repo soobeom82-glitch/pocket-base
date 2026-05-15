@@ -226,9 +226,15 @@
                 <p>이메일 : 0x00@kakao.com</p>
               </div>
             </div>
-            <form class="contact-form" action="https://formsubmit.co/0x00@kakao.com" method="POST">
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/0x00@kakao.com"
+              method="POST"
+              data-recipient="0x00@kakao.com"
+            >
               <input type="hidden" name="_subject" value="Pocket Base 상담 신청" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <label>
                 이름
                 <input type="text" name="name" placeholder="홍길동" required />
@@ -251,6 +257,7 @@
                 ></textarea>
               </label>
               <button class="button button-primary" type="submit">상담 신청 보내기</button>
+              <p class="form-status" aria-live="polite"></p>
               <p class="form-note">초기 설정 시에는 수신 메일함으로 도착하는 확인 메일에서 활성화가 한 번 필요할 수 있습니다.</p>
             </form>
           </div>
