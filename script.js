@@ -1,5 +1,32 @@
 const contactForm = document.querySelector("#contact-form");
 
+const notifyVisit = () => {
+  if (window.location.protocol === "file:") {
+    return;
+  }
+
+  const payload = {
+    url: window.location.href,
+    path: window.location.pathname,
+    referrer: document.referrer || "",
+    userAgent: navigator.userAgent,
+    language: navigator.language || "",
+    screen: `${window.screen.width}x${window.screen.height}`,
+    viewport: `${window.innerWidth}x${window.innerHeight}`,
+    visitedAt: new Date().toISOString(),
+  };
+
+  fetch("/api/visit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  }).catch(() => {});
+};
+
+notifyVisit();
+
 if (contactForm) {
   const statusMessage = contactForm.querySelector(".form-status");
   const submitButton = contactForm.querySelector('button[type="submit"]');
