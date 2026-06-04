@@ -71,7 +71,7 @@ module.exports = (req, res) => {
         message: String(body.message || "").trim(),
       };
 
-      if (!payload.name || !payload.phone || !payload.message) {
+      if (!payload.phone) {
         res.status(400).json({ ok: false, message: "Missing required fields" });
         return null;
       }
