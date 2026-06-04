@@ -24,16 +24,13 @@ if [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
   exit 1
 fi
 
+SITE_BASE_URL="${SITE_BASE_URL:-https://pocket-base-lac.vercel.app}"
 TIMESTAMP=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S KST')
-MESSAGE=$(cat <<EOF
-Pocket Base 문의 요청 테스트
-
-구분: 자동 테스트
-실행 시각: $TIMESTAMP
-상태: 정상 전송 확인용 테스트 메시지
+PAYLOAD=$(cat <<EOF
+{"name":"자동 테스트","phone":"010-0000-0000","email":"test@pocketbase.local","message":"문의 요청 자동 테스트입니다. 실행 시각: $TIMESTAMP"}
 EOF
 )
 
-curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+curl -s -X POST "${SITE_BASE_URL}/api/contact" \
   -H "Content-Type: application/json" \
-  -d "{\"chat_id\":\"${TELEGRAM_CHAT_ID}\",\"text\":\"${MESSAGE//$'\n'/\\n}\"}"
+  -d "$PAYLOAD"
