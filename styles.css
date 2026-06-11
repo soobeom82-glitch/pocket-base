@@ -577,6 +577,26 @@ textarea {
   word-break: keep-all;
 }
 
+.contact-info a {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.contact-assurance {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 240, 223, 0.56);
+}
+
+.contact-assurance p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
 .form-status {
   min-height: 1.5em;
   margin: -2px 0 0;
@@ -592,6 +612,10 @@ textarea {
 .contact-form .button[disabled] {
   opacity: 0.72;
   cursor: wait;
+}
+
+.contact-call-button {
+  width: 100%;
 }
 
 .form-note {
