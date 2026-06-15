@@ -288,10 +288,6 @@ textarea {
 }
 
 .floating-cta {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 30;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -304,10 +300,24 @@ textarea {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.floating-cta-group {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: grid;
+  gap: 10px;
+}
+
 .floating-cta:hover,
 .floating-cta:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 22px 38px rgba(45, 36, 31, 0.22);
+}
+
+.floating-cta-secondary {
+  background: #fae100;
+  color: #2d241f;
 }
 
 .hero-panel {
@@ -614,6 +624,7 @@ textarea {
   cursor: wait;
 }
 
+.contact-kakao-button,
 .contact-call-button {
   width: 100%;
 }
@@ -716,9 +727,12 @@ textarea {
     width: 100%;
   }
 
-  .floating-cta {
+  .floating-cta-group {
     right: 16px;
     bottom: 16px;
+  }
+
+  .floating-cta {
     min-height: 50px;
     padding: 0 18px;
   }
