@@ -430,11 +430,18 @@ textarea {
   overflow-wrap: break-word;
 }
 
+.branch-grid {
+  display: grid;
+  gap: 18px;
+}
+
 .branch-feature {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 22px;
   padding: 30px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .branch-main {
@@ -462,6 +469,26 @@ textarea {
   height: 120px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(242, 138, 35, 0.14), transparent 70%);
+}
+
+.branch-copy {
+  margin: 0;
+}
+
+.branch-badge-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.branch-badge-box span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 240, 223, 0.86);
+  color: var(--accent-strong);
+  font-size: 0.94rem;
+  font-weight: 600;
 }
 
 .branch-details {
@@ -735,5 +762,10 @@ textarea {
   .floating-cta {
     min-height: 50px;
     padding: 0 18px;
+  }
+
+  .branch-badge-box span {
+    width: 100%;
+    text-align: center;
   }
 }
